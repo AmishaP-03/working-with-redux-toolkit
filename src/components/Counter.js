@@ -11,9 +11,9 @@ const Counter = () => {
    * 
    * When this component is unmounted from the DOM, react-redux will automatically clear this subscription for us
    */
-  const counter = useSelector(state => state.counter);
+  const counter = useSelector(state => state.counter.counter);
 
-  const showCounter = useSelector(state => state.showCounter);
+  const showCounter = useSelector(state => state.counter.showCounter);
 
   /**
    * Function which will dispatch our action to the redux store

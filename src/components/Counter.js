@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'; // custom hooks provided by react-redux
 import classes from './Counter.module.css';
-import { counterActions } from '../store/redux.js';
+import { counterActions } from '../store/counter.js';
 
 const Counter = () => {
   /**

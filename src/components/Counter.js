@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'; // custom hooks provided by react-redux
 import classes from './Counter.module.css';
+import { counterActions } from '../store/redux.js';
 
 const Counter = () => {
   /**
@@ -20,19 +21,19 @@ const Counter = () => {
   const dispatchFunction = useDispatch();
 
   function handleIncrement() {
-    dispatchFunction({type: "INCREMENT", amount: 1});
+    dispatchFunction(counterActions.increment(1)); // {type: 'SOME_UNIQUE_IDENTIFIER_AUTO_GENERATED_BY_REDUX_TOOLKIT', payload: 1}
   }
 
   function handleIncrementByFive() {
-    dispatchFunction({type: "INCREMENT", amount: 5});
+    dispatchFunction(counterActions.increment(5));
   }
 
   function handleDecrement() {
-    dispatchFunction({type: "DECREMENT"});
+    dispatchFunction(counterActions.decrement());
   }
 
   function handleToggle() {
-    dispatchFunction({type: "TOGGLE"});
+    dispatchFunction(counterActions.toggleCounter());
   }
 
   return (
